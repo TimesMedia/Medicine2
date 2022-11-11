@@ -83,6 +83,9 @@ namespace Medicine2
                 Data.DataSet1TableAdapters.WordDocumentTableAdapter lWordAdapter = new Data.DataSet1TableAdapters.WordDocumentTableAdapter();
                 lWordAdapter.FillBy(lWordTable);
 
+                Data.DataSet1TableAdapters.PackagingTableAdapter lPackagingAdapter = new Data.DataSet1TableAdapters.PackagingTableAdapter();
+
+
                 foreach (DataSet1.WordDocumentRow  lRow in lWordTable.Rows)
                 {
                     string? lExtension = lRow.Format;
@@ -92,18 +95,30 @@ namespace Medicine2
                     }
                             
                     lCurrentRecord = lRow.Id;
-                    string lFirstParagraph = WordIO.GetFirstParagraph(lCurrentRecord, lExtension);
+                    List<string> lResult = WordIO.GetDocumentInfo(lCurrentRecord, lExtension);
+                    
+                    string lFirstParagraph = lResult[0];
+
                     if (lFirstParagraph.Length < 2)
                     {
                         lFirstParagraph = "Nothing in first paragraph";
                     }
-
                     lRow.InitialText = lFirstParagraph;
-                    lWordAdapter.Update(lRow); 
-                   
-                    //MessageBox.Show(lCurrentRecord.ToString() + " " + lFirstParagraph);
+                    lWordAdapter.Update(lRow);
+
+
+                    // Now try to save the Packaging information 
+                    for (int i = 1; i < lResult.Count + 1; i++)
+                    {   (int lNappiCode, int lNappieSuffix) = ExtractNappiCode(lResult[i]); 
+                        lPackagingAdapter.Merge(lRow.Id, lNappiCode, lNappieSuffix, lResult[i] );
+                    }             
                 }
                 MessageBox.Show(lWordTable.Rows.Count.ToString() + " records updated.");
+
+                (int lNappiCode, int lNappieSuffix) ExtractNappiCode(string pResult)
+                {
+                     return (0, 0);
+                }
 
 
             }

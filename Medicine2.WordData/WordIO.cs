@@ -15,11 +15,15 @@ namespace Medicine2.WordData
     {
  
 
-        public static string GetFirstParagraph(int Id, string pExtension)
+        public static List<string> GetDocumentInfo(int Id, string pExtension)
         {
+            List<string> lResult = new List<string>();
+
+
             if (pExtension.Substring(0,4) != ".doc")
             {
-                return "Invalid file extension";
+                lResult.Add("Invalid file extension");
+                return lResult;
             }
 
 
@@ -40,54 +44,62 @@ namespace Medicine2.WordData
                 Word.Paragraphs lParagraphs = lDocument.Paragraphs;
 
                 if (lParagraphs.Count == 0)
-                { 
-                    return "No Paragraphs";
+                {
+                    lResult.Add("No Paragraphs");
+                    return lResult;
                 }
 
                 Word.Paragraph lParagraph = lDocument.Paragraphs.First;
                 Word.Range lRange = lParagraph.Range;
                 lRange.Select();
-                return lApp.Selection.Text;
+                lResult.Add(lApp.Selection.Text);
+
+                // Search for Nappi codes 
+
+                if (lParagraphs.Count > 3)
+                {
+                    Regex Test1 = new Regex(@"^[\d]{*}-[\d]{3}[\w]*");
+                   
+                    foreach (Word.Paragraph item in lDocument.Paragraphs)
+                    {
+                        Word.Range lRange2 = item.Range;
+                        lRange.Select();
+                        string lTarget = lApp.Selection.Text.Substring(0, 60);
+  
+                        if (Test1.IsMatch(lTarget))
+                        {
+                            lResult.Add(lTarget);
+                        }
+                    }
+                }
+
+                return lResult;
+
+
                 //***********************
 
-              
-                //foreach (Word.Paragraph item in lDocument.Paragraphs)
                 //{
-                //    Word.Range lRange = item.Range;
-                //    lRange.Select();
-                //    string lTarget = lApp.Selection.Text.Substring(0,20);
-                //    lNappies.Add(lTarget);
+                //    //Console.WriteLine(lTarget);
 
-                    //Regex Test1 = new Regex(@"^[\d]{*}-[\d]{3}[\w]*");
+                //    string lTarget2 = lTarget.Substring(lTarget.IndexOf('R') + 1);
+                //    lTarget2 = Regex.Replace(lTarget2, @"\s+", String.Empty);
+                //    lTarget2 = Regex.Replace(lTarget2, @"\r+", String.Empty);
+                //    //lTarget2 = lTarget2.Replace(',', '.');
+                //    decimal Price = Decimal.Parse(lTarget2);
 
-                    //if (Test1.IsMatch(lTarget))
-                    //{ 
-                    //    lNappies.Add(lTarget);
-                    //}
+                //    //Regex Test2 = new Regex(@"[\d]*[\s]*[\d]+,[\d]{2}");
+                //    //if (!Test2.IsMatch(lTarget2))
+                //    //{
+                //    //    Console.WriteLine("No match for price");
+                //    //}
+                //    //else
+                //    //{ 
 
+                //    //Match lMatch = Test2.Match(lTarget, 7);
 
-                    //{
-                    //    //Console.WriteLine(lTarget);
+                //    Console.WriteLine(gApp.Selection.Text.Substring(0, 10) + "\t" + Price.ToString("#####0.00"));
 
-                    //    string lTarget2 = lTarget.Substring(lTarget.IndexOf('R') + 1);
-                    //    lTarget2 = Regex.Replace(lTarget2, @"\s+", String.Empty);
-                    //    lTarget2 = Regex.Replace(lTarget2, @"\r+", String.Empty);
-                    //    //lTarget2 = lTarget2.Replace(',', '.');
-                    //    decimal Price = Decimal.Parse(lTarget2);
-
-                    //    //Regex Test2 = new Regex(@"[\d]*[\s]*[\d]+,[\d]{2}");
-                    //    //if (!Test2.IsMatch(lTarget2))
-                    //    //{
-                    //    //    Console.WriteLine("No match for price");
-                    //    //}
-                    //    //else
-                    //    //{ 
-
-                    //    //Match lMatch = Test2.Match(lTarget, 7);
-
-                    //    Console.WriteLine(gApp.Selection.Text.Substring(0, 10) + "\t" + Price.ToString("#####0.00"));
-
-                    //}
+                //}
 
                 //}
 
