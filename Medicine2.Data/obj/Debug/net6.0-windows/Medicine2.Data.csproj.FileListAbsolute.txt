@@ -1,0 +1,12 @@
+C:\CSharpCore\Medicine2\Medicine2.Data\bin\Debug\net6.0-windows\Medicine2.Data.deps.json
+C:\CSharpCore\Medicine2\Medicine2.Data\bin\Debug\net6.0-windows\Medicine2.Data.dll
+C:\CSharpCore\Medicine2\Medicine2.Data\bin\Debug\net6.0-windows\Medicine2.Data.pdb
+C:\CSharpCore\Medicine2\Medicine2.Data\obj\Debug\net6.0-windows\Medicine2.Data.csproj.AssemblyReference.cache
+C:\CSharpCore\Medicine2\Medicine2.Data\obj\Debug\net6.0-windows\Medicine2.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\CSharpCore\Medicine2\Medicine2.Data\obj\Debug\net6.0-windows\Medicine2.Data.AssemblyInfoInputs.cache
+C:\CSharpCore\Medicine2\Medicine2.Data\obj\Debug\net6.0-windows\Medicine2.Data.AssemblyInfo.cs
+C:\CSharpCore\Medicine2\Medicine2.Data\obj\Debug\net6.0-windows\Medicine2.Data.csproj.CoreCompileInputs.cache
+C:\CSharpCore\Medicine2\Medicine2.Data\obj\Debug\net6.0-windows\Medicine2.Data.dll
+C:\CSharpCore\Medicine2\Medicine2.Data\obj\Debug\net6.0-windows\refint\Medicine2.Data.dll
+C:\CSharpCore\Medicine2\Medicine2.Data\obj\Debug\net6.0-windows\Medicine2.Data.pdb
+C:\CSharpCore\Medicine2\Medicine2.Data\obj\Debug\net6.0-windows\ref\Medicine2.Data.dll

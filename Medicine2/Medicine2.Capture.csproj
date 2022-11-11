@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Medicine2.Data\Medicine2.Data.csproj" />
+    <ProjectReference Include="..\Medicine2.WordData\Medicine2.WordData.csproj" />
+  </ItemGroup>
+
+</Project>

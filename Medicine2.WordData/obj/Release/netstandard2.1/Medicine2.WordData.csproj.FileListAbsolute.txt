@@ -1,0 +1,12 @@
+C:\CSharpCore\Medicine2\Medicine2.WordData\bin\Release\netstandard2.1\Medicine2.WordData.deps.json
+C:\CSharpCore\Medicine2\Medicine2.WordData\bin\Release\netstandard2.1\Medicine2.WordData.dll
+C:\CSharpCore\Medicine2\Medicine2.WordData\bin\Release\netstandard2.1\Medicine2.WordData.pdb
+C:\CSharpCore\Medicine2\Medicine2.WordData\obj\Release\netstandard2.1\Medicine2.WordData.csproj.AssemblyReference.cache
+C:\CSharpCore\Medicine2\Medicine2.WordData\obj\Release\netstandard2.1\Medicine2.WordData.GeneratedMSBuildEditorConfig.editorconfig
+C:\CSharpCore\Medicine2\Medicine2.WordData\obj\Release\netstandard2.1\Medicine2.WordData.AssemblyInfoInputs.cache
+C:\CSharpCore\Medicine2\Medicine2.WordData\obj\Release\netstandard2.1\Medicine2.WordData.AssemblyInfo.cs
+C:\CSharpCore\Medicine2\Medicine2.WordData\obj\Release\netstandard2.1\Medicine2.WordData.csproj.CoreCompileInputs.cache
+C:\CSharpCore\Medicine2\Medicine2.WordData\obj\Release\netstandard2.1\Medicine2.WordData.dll
+C:\CSharpCore\Medicine2\Medicine2.WordData\obj\Release\netstandard2.1\Medicine2.WordData.pdb
+C:\CSharpCore\Medicine2\Medicine2.WordData\bin\Release\netstandard2.1\Microsoft.Office.Interop.Word.dll
+C:\CSharpCore\Medicine2\Medicine2.WordData\obj\Release\netstandard2.1\Medicine2.WordData.csproj.CopyComplete
